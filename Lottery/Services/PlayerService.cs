@@ -11,7 +11,7 @@ namespace Lottery.Services
     public class PlayerService : IPlayerService
     {
         private static readonly Random _random = new Random();
-        private const int MinCpuPlayers = 10;
+        private const int MinCpuPlayers = 9;
         private const int MaxCpuPlayers = 15;
 
         public List<Player> SetupPlayers()
@@ -21,9 +21,9 @@ namespace Lottery.Services
                 new Player(Guid.NewGuid(), "Player 1", false) 
             };
 
-            int cpuPlayersCount = _random.Next(MinCpuPlayers, MaxCpuPlayers + 1);
+            int cpuPlayersCount = _random.Next(MinCpuPlayers, MaxCpuPlayers);
 
-            for (int i = 2; i <= cpuPlayersCount; i++)
+            for (int i = 2; i <= cpuPlayersCount +1; i++)
             {
                 players.Add(new Player(Guid.NewGuid(), $"Player {i}", true));
             }

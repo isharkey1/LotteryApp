@@ -21,11 +21,9 @@ namespace Lottery.Services
 
         public void ShowWelcomeMessage(Player player, decimal ticketPrice)
         {
-            Console.WriteLine($"Welcome to the {_casino.Name} Lottery, {player.Name}!");
-            Console.WriteLine();
+            Console.WriteLine($"Welcome to the {_casino.Name} Lottery, {player.Name}!\n");
             Console.WriteLine($"* Your digital balance: ${player.Balance}");
-            Console.WriteLine($"* Ticket Price: ${ticketPrice} each");
-            Console.WriteLine();
+            Console.WriteLine($"* Ticket Price: ${ticketPrice} each\n");
         }
 
         public void ShowWinnersMessage(List<WinningTicketDto> winningTickets)
@@ -76,8 +74,7 @@ namespace Lottery.Services
 
         public void ShowGameConclusionMessage()
         {
-            Console.WriteLine("Congratulations to the winners!");
-            Console.WriteLine();
+            Console.WriteLine("Congratulations to the winners!\n");
             Console.WriteLine($"House Revenue: ${_casino.Revenue:F2}");
         }
     }
